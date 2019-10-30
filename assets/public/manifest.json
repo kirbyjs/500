@@ -1,0 +1,9 @@
+{
+  "name": "500",
+  "short_name": "500",
+  "display": "browser",
+  "Scope": "/",
+  "start_url": "/",
+  "icons": [],
+  "splash_pages": null
+}
