@@ -1,3 +1,6 @@
 .idea
 .DS_Store
-node_modules
+/assets/bundle
+/assets/json
+/node_modules
+/webpack/manifest
