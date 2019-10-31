@@ -1,5 +1,3 @@
-// Created by kirbyjs on 10/21/18.
-
 function addScriptTag(sourceFile) {
     return `<script src="${sourceFile}"></script>`;
 }

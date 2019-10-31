@@ -1,5 +1,3 @@
-// Created by kirbyjs on 10/21/18.
-
 const plugins = [];
 
 if (!process.env.NODE_ENV === 'production') {
