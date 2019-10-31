@@ -1,5 +1,3 @@
-// Created by kirbyjs on 2/1/18.
-
 const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

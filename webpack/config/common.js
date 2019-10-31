@@ -1,5 +1,3 @@
-// Created by kirbyjs on 2/1/18.
-
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 

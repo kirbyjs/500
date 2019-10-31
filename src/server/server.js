@@ -1,5 +1,3 @@
-// Created by kirbyjs on 10/21/18.
-
 import path from 'path';
 import fs from 'fs';
 import spdy from 'spdy';

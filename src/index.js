@@ -1,5 +1,3 @@
-// Created by kirbyjs on 2/1/18.
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';

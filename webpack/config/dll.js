@@ -1,4 +1,3 @@
-// Created by kirbyjs on 2/1/18.
 const webpack = require('webpack');
 const path = require('path');
 const AssetsPlugin = require('assets-webpack-plugin');
