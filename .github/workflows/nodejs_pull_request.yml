@@ -1,0 +1,21 @@
+name: Node CI
+
+on: [ pull_request ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Add node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm_verify
+        run: |
+          npm ci
+          npm run verify
+        env:
+          CI: true
