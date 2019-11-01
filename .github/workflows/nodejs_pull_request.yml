@@ -19,3 +19,5 @@ jobs:
           npm run verify
         env:
           CI: true
+      - name: hadolint_dockerfiles
+        uses: docker://cdssnc/docker-lint-github-action
