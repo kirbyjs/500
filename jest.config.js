@@ -1,7 +1,7 @@
 // jest.config.js
 module.exports = {
     transform: {
-        "^.+\\.[t|j]sx?$": "babel-jest"
+        '^.+\\.[t|j]sx?$': 'babel-jest'
     },
-    verbose: true,
+    verbose: true
 };

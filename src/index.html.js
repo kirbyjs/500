@@ -7,14 +7,15 @@ function addLinkCSSTag(sourceFile) {
 }
 
 export default ({ body }) => {
-    const assetsObject = require('../assets/json/assets.json'); // eslint-disable-line global-require
+    // eslint-disable-next-line global-require, import/no-unresolved
+    const assetsObject = require('../assets/json/assets.json');
 
     const assets = Object.values(assetsObject);
-    const scriptFiles = assets.filter(asset => asset.js);
-    const cssFiles = assets.filter(asset => asset.css);
+    const scriptFiles = assets.filter((asset) => asset.js);
+    const cssFiles = assets.filter((asset) => asset.css);
 
-    const htmlScriptTags = scriptFiles.map(asset => addScriptTag(asset.js));
-    const htmlCSSLinkTag = cssFiles.map(asset => addLinkCSSTag(asset.css));
+    const htmlScriptTags = scriptFiles.map((asset) => addScriptTag(asset.js));
+    const htmlCSSLinkTag = cssFiles.map((asset) => addLinkCSSTag(asset.css));
 
     return `
         <!DOCTYPE html>

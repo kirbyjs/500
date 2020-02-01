@@ -1,6 +1,8 @@
-@import 'component.scss';
+@import 'component';
 
-*, *:before, *:after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 

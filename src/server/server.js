@@ -1,3 +1,5 @@
+/* eslint-disable global-require, no-console */
+
 import path from 'path';
 import fs from 'fs';
 import spdy from 'spdy';
@@ -45,7 +47,7 @@ if (process.env.NODE_ENV === 'localhost') {
 
     app.listen(8080, () => {
         console.log('Listening on port: 8080');
-    })
+    });
 } else {
     const certOptions = {
         key: fs.readFileSync(path.resolve('letsencrypt/live/kirbyjs.com/privkey.pem')),
@@ -61,4 +63,3 @@ if (process.env.NODE_ENV === 'localhost') {
         console.log('Listening on port: 443');
     });
 }
-
