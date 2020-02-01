@@ -4,6 +4,7 @@ import spdy from 'spdy';
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import * as redis from './redis';
 import App from '../app';
 import template from '../index.html';
 
@@ -17,6 +18,14 @@ function buildWebpackServer(expressApp) {
     }));
     expressApp.use(require('webpack-hot-middleware')(compiler));
 }
+
+redis.connect(6379, 'redis');
+redis.set('name', '500!');
+
+redis.get('name').then((result) => {
+    console.log('What game are we playing?\n', result);
+    redis.del('name');
+});
 
 const app = express();
 
