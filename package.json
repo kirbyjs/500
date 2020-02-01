@@ -2,6 +2,9 @@
   "name": "500",
   "version": "1.0.0",
   "description": "500 card game",
+  "repository": {
+    "url": "https://github.com/kirbyjs/500"
+  },
   "main": "lib/app.js",
   "author": "Kirby",
   "license": "MIT",
