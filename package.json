@@ -22,7 +22,7 @@
     "ioredis": "^4.14.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-hot-loader": "^4.7.1",
+    "react-hot-loader": "^4.12.16",
     "spdy": "^4.0.0"
   },
   "devDependencies": {
