@@ -2,8 +2,8 @@ const AssetsPlugin = require('assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const webpackConfig = require('./common');
 const path = require('path');
+const webpackConfig = require('./common');
 
 module.exports = {
     ...webpackConfig,

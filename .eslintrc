@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "import/no-extraneous-dependencies": "off",
+    "indent": ["error", 4],
+    "max-len": ["error", 120],
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-filename-extension": "off"
+  },
+  "plugins": ["jest"]
+}

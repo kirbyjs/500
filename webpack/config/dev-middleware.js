@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpackConfig = require('./common');
 const path = require('path');
+const webpackConfig = require('./common');
 
 module.exports = {
     ...webpackConfig,
