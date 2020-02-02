@@ -2,10 +2,8 @@
 .gitignore
 LICENSE
 README.md
-/.cert
-/.circleci
 /assets/bundle
 /assets/json
 /lib
 /node_modules
-/terraform
+/tf

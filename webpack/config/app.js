@@ -1,16 +1,15 @@
-const AssetsPlugin = require('assets-webpack-plugin');
+// Created by kirby15 on 2/1/18.
+
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const path = require('path');
 const webpackConfig = require('./common');
 
 module.exports = {
     ...webpackConfig,
     mode: 'production',
-    entry: {
-        app: './src/index.js'
-    },
     optimization: {
         splitChunks: {
             chunks: 'initial'
@@ -20,16 +19,15 @@ module.exports = {
     output: {
         filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, '..', '..', 'assets', 'bundle'),
-        publicPath: '/assets/bundle'
+        publicPath: '/'
     },
     plugins: [
+        ...webpackConfig.plugins,
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '..', '..', 'src', 'index.html')
+        }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
-        }),
-        new AssetsPlugin({
-            filename: 'assets.json',
-            path: path.join(__dirname, '..', '..', 'assets', 'json'),
-            includeAllFileTypes: false
         })
     ]
 };

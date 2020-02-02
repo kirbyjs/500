@@ -1,9 +1,16 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import App from '../../src/app';
 
-test('App renders', () => {
-    const component = renderer.create(<App />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+describe('<App /> rendering', () => {
+    let component;
+
+    beforeEach(() => {
+        component = shallow(<App />);
+    });
+
+    it('App renders', () => {
+        expect(component).toMatchSnapshot();
+    });
 });
