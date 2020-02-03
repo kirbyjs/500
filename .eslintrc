@@ -1,6 +1,15 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors"
+  ],
   "parser": "babel-eslint",
+  "settings": {
+    "react": {"version":  "detect"}
+  },
   "env": {
     "browser": true,
     "jest/globals": true
@@ -13,5 +22,11 @@
     "react/jsx-indent": ["error", 4],
     "react/jsx-filename-extension": "off"
   },
-  "plugins": ["jest"]
+  "plugins": [
+    "import",
+    "jest",
+    "jsx-a11y",
+    "react",
+    "react-hooks"
+  ]
 }
