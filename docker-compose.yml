@@ -1,13 +1,39 @@
 version: '3.7'
 services:
-  '500':
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    ports:
+      - "4567-4599:4567-4599"
+      - "8080:8080"
+    environment:
+      - SERVICES=apigateway,dynamodb,iam,lambda
+      - PORT_WEB_UI=8080
+      - LAMBDA_EXECUTOR=docker-reuse
+      - LAMBDA_REMOTE_DOCKER=false
+      - PWD_USER=$PWD
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "/tmp/localstack:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - app
+  environment:
+    image: 500_environment:local
+    container_name: 500_environment
     build:
-      dockerfile: ./docker/Dockerfile.dev
+      dockerfile: ./docker/Dockerfile.environment
       context: .
     ports:
-      - 8080:8080
+      - 7777:7777
     volumes:
-      - ./src:/usr/src/app/src
+      - ./scripts/local/:/app/scripts/local
+      - ./tf/local/:/app/tf/local
+      - ./src/lambdas:/app/src/lambdas
+      - ./babel:/app/babel
+      - ./esm-lambda-entry.js:/app/src/esm-lambda-entry.js
+    depends_on:
+      - localstack
     networks:
       - app
 

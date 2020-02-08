@@ -1,14 +1,6 @@
 name: PR Verify
 on: [ pull_request ]
 jobs:
-  docker_lint:
-    runs-on: ubuntu-latest
-    container: hadolint/hadolint
-    steps:
-      - uses: actions/checkout@v1
-      - run: |
-          hadolint Dockerfile
-          hadolint docker/Dockerfile.dev
   npm_verify:
     runs-on: ubuntu-latest
     steps:

@@ -1,0 +1,21 @@
+FROM node:12-alpine
+
+RUN apk add curl
+
+WORKDIR /app
+ENV PATH="/app/terraform:$PATH"
+ENV TF_VERSION=0.12.20
+ENV TF_FILE="terraform_${TF_VERSION}_linux_amd64.zip"
+
+WORKDIR /app/terraform
+RUN wget https://releases.hashicorp.com/terraform/${TF_VERSION}/${TF_FILE}
+RUN unzip $TF_FILE
+RUN terraform -v
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+
+EXPOSE 7777
+
+CMD ["sh", "./scripts/local/build-env.sh"]
