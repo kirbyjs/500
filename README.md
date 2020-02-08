@@ -1,4 +1,4 @@
-# 500
+# <img src="https://user-images.githubusercontent.com/13893942/74079704-aceead80-4a00-11ea-90ce-a1235973518c.png" width="150" alt="500"/>
 
 ### Playing Instructions
 
