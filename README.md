@@ -1,43 +1,26 @@
 # 500
 
-### Contribution
+### Playing Instructions
 
+[See Player's Guide for more details](https://github.com/kirbyjs/500/blob/master/docs/PLAYERS_GUIDE.md)
+
+### Contribution
 #### Starting Locally
 
-##### With docker-compose
-`$ docker-compose up`
+1. `$ docker-compose up`
+    - This will spin up the local aws environment so that we can get a production like environment locally.
+1. `$ npm run start`
+    - This will start the webpack-dev-server and will hot-reload the application
 
-#### With Node.js
-`$ npm run build:local` :notebook: this is only necessary the first time or if dependencies get updated
-`$ npm run start:local`
+#### Updating the lambdas
+1. After a change is made run: `$ npm run build:lambdas`
+    - The lambdas are bind mounted to the host machine, so there is no need to restart any services.
 
+#### Note on lambda logging
+:notebook: There is no output logs for the lambda right out of the box. To enable this run: 
 
-### Objective
-To be the first team to get to 500 points.
+```bash
+sh ./scripts/local/listen-to-lambda-logs.sh [actions|websocket] # Note "actions" or "websocket" are the lambdas that exist in this repo. 
+```
 
-### How is the game played
-___
-
-#### Teams
-500 is played with two teams of two players each. For seating, a player must be sitting between the two players from the opposite team.
-#### Cards/Shuffle
-All 2s and 3s are removed from the deck along with one of the jokers. The remaining cards are shuffled just like any other card game.
-#### Cut
-The player to the dealers right gets the option to cut the deck before it is dealt.
-#### Deal
-The dealer can deal in any fashion he or she chooses. The only requirements are that each player ends up with 10 cards, the blind ends up with 5 cards, and no card is revealed during the deal.
-#### Bidding Phase
-Starting with the player to the left of the dealer each player may choose to bid (naming the trump suit and the minimum number of hands the team will win).
-##### Hand Ranking
-*from lowest to highest*
-* Spades
-* Clubs
-* Diamonds
-* Hearts
-* No Trump
-
-The bidding for the number of books to win starts at 6 and goes to 10.
-
-The person who wins the bidding phase gets to include the 5 cards from the blind and then get rid of 5 cards to get back down to 10 cards total.
-#### Start of Game/Game Flow
-The person who won the bidding phase starts the game. Each player
+***Logs do have to exist*** from the lambda before starting that script. It _will_ also pick up previous logs that occurred. 

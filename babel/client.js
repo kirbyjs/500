@@ -1,9 +1,3 @@
-const plugins = [];
-
-if (!process.env.NODE_ENV === 'production') {
-    plugins.push('react-hot-loader/babel');
-}
-
 module.exports = {
     ignore: ['node_modules'],
     presets: [
@@ -19,6 +13,5 @@ module.exports = {
                 modules: false
             }
         ]
-    ],
-    plugins
+    ]
 };

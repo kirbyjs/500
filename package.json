@@ -9,7 +9,7 @@
   "author": "Kirby",
   "license": "MIT",
   "scripts": {
-    "babel": "babel src --config-file ./babel/node.js --no-babelrc --out-dir lib --ignore \"src/ui,src/index.js\"",
+    "babel:lambdas": "babel src/lambdas --config-file ./babel/node.js --no-babelrc --out-dir lib/lambdas",
     "build": "run-s clean && cross-env NODE_ENV=production run-p babel webpack:prod",
     "clean": "rm -rf ./lib ./assets/bundle",
     "eslint": "eslint .",

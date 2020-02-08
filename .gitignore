@@ -1,6 +1,9 @@
 .idea
 .DS_Store
+.terraform
+*.tfstate
 /assets/bundle
 /assets/json
+/lib
 /node_modules
 /webpack/manifest
