@@ -17,3 +17,5 @@ aws --endpoint-url=http://localstack:4574 lambda create-function --function-name
     --handler lambda-entry.websocketDisconnection \
     --runtime nodejs12.x \
     --role lambda_role
+
+npm run start:apigateway-ws
