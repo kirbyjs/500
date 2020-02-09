@@ -20,7 +20,7 @@
 :notebook: There is no output logs for the lambda right out of the box. To enable this run: 
 
 ```bash
-sh ./scripts/local/listen-to-lambda-logs.sh [actions|websocket] # Note "actions" or "websocket" are the lambdas that exist in this repo. 
+sh ./scripts/local/listen-to-lambda-logs.sh [actions|websocketDisconnection] # Note "actions" or "websocket" are the lambdas that exist in this repo. 
 ```
 
 ***Logs do have to exist*** from the lambda before starting that script. It _will_ also pick up previous logs that occurred. 

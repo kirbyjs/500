@@ -2,6 +2,7 @@ FROM python:3
 
 ENV AWS_ACCESS_KEY_ID=fake
 ENV AWS_SECRET_ACCESS_KEY=fake
+ENV AWS_DEFAULT_REGION=us-east-1
 
 WORKDIR /app
 RUN curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
