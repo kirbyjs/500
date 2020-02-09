@@ -4,5 +4,5 @@ const indexLambda = require('./lib/lambdas'); // eslint-disable-line import/no-u
 
 module.exports = {
     actions: indexLambda.actions,
-    websocketConnections: indexLambda.websocketConnections
+    websocketDisconnection: indexLambda.websocketDisconnection
 };

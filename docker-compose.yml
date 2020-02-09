@@ -7,7 +7,7 @@ services:
       - "4567-4599:4567-4599"
       - "8080:8080"
     environment:
-      - SERVICES=apigateway,dynamodb,iam,lambda
+      - SERVICES=dynamodb,iam,lambda
       - PORT_WEB_UI=8080
       - LAMBDA_EXECUTOR=docker-reuse
       - LAMBDA_REMOTE_DOCKER=false
@@ -31,7 +31,6 @@ services:
       - ./tf/local/:/app/tf/local
       - ./src/lambdas:/app/src/lambdas
       - ./babel:/app/babel
-      - ./esm-lambda-entry.js:/app/src/esm-lambda-entry.js
     depends_on:
       - localstack
     networks:

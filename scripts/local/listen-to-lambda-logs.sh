@@ -16,7 +16,7 @@ if [ !"$(docker ps -q -f name=${CONTAINER_NAME})" ]; then
         docker rm ${CONTAINER_NAME}
     fi
     docker container run --name ${CONTAINER_NAME} --network 500_app -it "${IMAGE_NAME}" \
-              /app/bin/aws --endpoint-url=http://localstack:4586 logs tail "/aws/lambda/${lambda_function_name}" --follow --region us-east-1
+              /app/bin/aws --endpoint-url=http://localstack:4586 logs tail "/aws/lambda/${lambda_function_name}" --follow
 else
   echo "The conatiner ${CONTAINER_NAME} is already running!"
 fi
