@@ -15,6 +15,7 @@
     "eslint": "eslint .",
     "lint": "npm run eslint && npm run stylelint",
     "start": "npm run webpack:dev",
+    "start:apigateway-ws": "nodemon --exec babel-node --config-file ./babel/node.js --no-babelrc ./scripts/local/start-api-gateway-websocket.js",
     "test": "cross-env NODE_ENV=test jest",
     "stylelint": "stylelint ./sass",
     "verify": "npm run lint && npm run test",
@@ -22,14 +23,17 @@
     "webpack:prod": "webpack --config ./webpack/config/app.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.614.0",
     "config": "^3.2.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-hot-loader": "^4.12.16"
+    "react-hot-loader": "^4.12.16",
+    "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "autoprefixer": "^9.7.4",
@@ -54,6 +58,7 @@
     "jest": "25.1.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
     "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
@@ -64,6 +69,7 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.3",
-    "workbox-webpack-plugin": "^5.0.0"
+    "workbox-webpack-plugin": "^5.0.0",
+    "ws": "^7.2.1"
   }
 }
