@@ -4,6 +4,7 @@
 *.tfstate
 /assets/bundle
 /assets/json
+/coverage
 /lib
 /node_modules
 /webpack/manifest

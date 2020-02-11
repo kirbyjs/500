@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "src*": [
+        "./src*"
+      ]
+    }
+  },
+  "include": [
+    "scripts/local/*.ts",
+    "src/**/*",
+    "test/**/*",
+    "webpack/**/*"
+  ]
+}

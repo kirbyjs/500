@@ -1,6 +1,6 @@
-// Created by kirbyjs on 2/4/20.
+/* eslint-disable import/no-unresolved, @typescript-eslint/no-var-requires */
 
-const indexLambda = require('./lib/lambdas'); // eslint-disable-line import/no-unresolved
+const indexLambda = require('./lib/lambdas');
 
 module.exports = {
     actions: indexLambda.actions,

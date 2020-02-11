@@ -1,10 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import App from '../../src/app';
-
+import { shallow, ShallowWrapper } from 'enzyme';
+import App from '../../../src/ui/app';
 
 describe('<App /> rendering', () => {
-    let component;
+    let component: ShallowWrapper<React.FunctionComponent>;
 
     beforeEach(() => {
         component = shallow(<App />);
