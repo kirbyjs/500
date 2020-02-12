@@ -1,5 +1,4 @@
 import React from 'react';
-import { hot } from 'react-hot-loader/root';
 
 function App() {
     return (
@@ -9,4 +8,4 @@ function App() {
     );
 }
 
-export default hot(App);
+export default App;

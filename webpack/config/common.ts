@@ -1,12 +1,16 @@
+import path from 'path';
+import webpack from 'webpack';
+import autoprefixer from 'autoprefixer';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import { GenerateSW, GenerateSWOptions } from 'workbox-webpack-plugin';
 
-const path = require('path');
-const autoprefixer = require('autoprefixer');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const { GenerateSW } = require('workbox-webpack-plugin');
+interface GenerateSWOptionsV5 extends GenerateSWOptions {
+    additionalManifestEntries: { url: string; revision: string | null }[];
+}
 
-const isProduction = process.env.NODE_ENV === 'production';
-const scssCommonLoaders = [
+const isProduction: boolean = process.env.NODE_ENV === 'production';
+const scssCommonLoaders: webpack.Loader[] = [
     {
         loader: MiniCssExtractPlugin.loader,
         options: {
@@ -32,7 +36,30 @@ const scssCommonLoaders = [
     }
 ];
 
-module.exports = {
+const swOptions: GenerateSWOptionsV5 = {
+    swDest: 'sw.js',
+    clientsClaim: true,
+    skipWaiting: true,
+    additionalManifestEntries: [
+        {
+            url: '/index.html',
+            revision: null
+        },
+        {
+            url: '/manifest.json',
+            revision: null
+        },
+        {
+            url: '/favicon.ico',
+            revision: null
+        }
+    ]
+};
+
+const config: webpack.Configuration = {
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.json']
+    },
     module: {
         rules: [
             {
@@ -45,12 +72,12 @@ module.exports = {
                 }]
             },
             {
-                test: /\.js/,
+                test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        plugins: ['react-hot-loader/babel']
+                        plugins: isProduction ? [] : ['react-hot-loader/babel']
                     }
                 }
             },
@@ -61,27 +88,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new GenerateSW({
-            swDest: 'sw.js',
-            clientsClaim: true,
-            skipWaiting: true,
-            additionalManifestEntries: [
-                {
-                    url: '/index.html',
-                    revision: null
-                },
-                {
-                    url: '/manifest.json',
-                    revision: null
-                },
-                {
-                    url: '/favicon.ico',
-                    revision: null
-                }
-            ]
-        }),
+        new GenerateSW(swOptions),
         new CopyPlugin([{
             from: path.resolve(__dirname, '..', '..', 'assets', 'public')
         }])
     ]
 };
+
+export default config;

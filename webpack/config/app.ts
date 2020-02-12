@@ -1,13 +1,14 @@
-// Created by kirby15 on 2/1/18.
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import webpackConfig from './common';
 
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const webpackConfig = require('./common');
+const plugins: webpack.Plugin[] = webpackConfig.plugins || [];
 
-module.exports = {
+const config: webpack.Configuration = {
     ...webpackConfig,
     mode: 'production',
     optimization: {
@@ -22,7 +23,7 @@ module.exports = {
         publicPath: '/'
     },
     plugins: [
-        ...webpackConfig.plugins,
+        ...plugins,
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '..', '..', 'src', 'index.html')
         }),
@@ -31,3 +32,5 @@ module.exports = {
         })
     ]
 };
+
+export default config;
