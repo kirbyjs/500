@@ -1,5 +1,9 @@
 @import 'component';
 
+$wood-border-size: 30px;
+$wood-border-size-medium: 40px;
+$wood-border-size-large: 50px;
+
 *,
 *::before,
 *::after {
@@ -7,7 +11,56 @@
 }
 
 body {
-  background-color: mediumpurple;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  border: $wood-border-size solid;
+  background-color: #421f06;
+  border-image: url('backgrounds/retina-wood.png') 80 80 repeat;
   box-sizing: border-box;
-  display: flex;
+  width: 100vw;
+
+  #root {
+    background-color: #019646;
+    background-image: url('backgrounds/dark-geometric.png'); // @stylelint ignore
+    border-radius: 5px;
+    box-shadow: inset 0 0 12px 4px #333;
+    height: calc(100vh + 10px - #{$wood-border-size * 2});
+    margin: -5px;
+    padding: 0;
+  }
+
+  h1 {
+    display: none;
+    margin: 0;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  body {
+    border: $wood-border-size-medium solid;
+    border-image: url('backgrounds/retina-wood.png') 80 80 repeat;
+
+    #root {
+      border-radius: 10px;
+      height: calc(100vh + 20px - #{$wood-border-size-medium * 2});
+      margin: -10px;
+    }
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  body {
+    border: $wood-border-size-large solid;
+    border-image: url('backgrounds/retina-wood.png') 80 80 repeat;
+
+    #root {
+      border-radius: 10px;
+      height: calc(100vh + 30px - #{$wood-border-size-large * 2});
+      margin: -15px;
+    }
+  }
 }
