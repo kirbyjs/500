@@ -94,7 +94,7 @@
     "sass-loader": "^8.0.2",
     "stylelint": "^13.2.0",
     "stylelint-config-standard": "^20.0.0",
-    "terser-webpack-plugin": "^2.3.4",
+    "terser-webpack-plugin": "^2.3.5",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5",
     "uuid": "^3.4.0",
