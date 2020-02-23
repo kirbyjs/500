@@ -1,6 +1,6 @@
 import { ApiContext, ApiGatewayEvent, ApiGatewayProxyResult } from './interfaces/aws-lambda';
 import WebSocketMessage from '../interfaces/websocket-message';
-import ActionTypes from '../enums/action-types';
+import { RequestActionTypes } from '../enums/action-types';
 import { buildErrorResponse, buildSuccessResponse } from './helpers/response-builder';
 import ActionLambdaErrorTypes from '../enums/error-types';
 
@@ -13,7 +13,7 @@ export default function actions(event: ApiGatewayEvent, context: ApiContext): Ap
     }
     const webSocketMessage: WebSocketMessage = JSON.parse(event.body);
 
-    // if (webSocketMessage.action === ActionTypes.CREATE_SESSION) {
+    // if (webSocketMessage.action === RequestActionTypes.CREATE_SESSION) {
     //     // create session code
     // }
 
