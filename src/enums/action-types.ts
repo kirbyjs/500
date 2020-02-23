@@ -1,8 +1,14 @@
-enum ActionTypes {
+export enum RequestActionTypes {
     CREATE_SESSION = 'CREATE_SESSION',
     JOIN_SESSION = 'JOIN_SESSION',
     BID = 'BID',
     PLAY = 'PLAY'
 }
 
-export default ActionTypes;
+export enum ResponseActionTypes {
+    ADD_USER = 'ADD_USER',
+    REMOVE_USER = 'REMOVE_USER',
+    UPDATE_CARDS_IN_TRICK = 'UPDATE_CARDS_IN_TRICK',
+    UPDATE_PLAY_SCORE = 'UPDATE_PLAY_SCORE',
+    UPDATE_GAME_SCORE = 'UPDATE_GAME_SCORE'
+}

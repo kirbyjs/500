@@ -25,14 +25,14 @@ const scssCommonLoaders: webpack.Loader[] = [
         }
     },
     {
-        loader: 'sass-loader',
-        options: { sourceMap: !isProduction }
-    },
-    {
         loader: 'postcss-loader',
         options: {
             plugins: [autoprefixer()]
         }
+    },
+    {
+        loader: 'sass-loader',
+        options: { sourceMap: !isProduction }
     }
 ];
 

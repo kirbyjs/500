@@ -26,8 +26,10 @@ module.exports = {
         'comma-dangle': ['error', 'never'],
         'import/no-extraneous-dependencies': 'off',
         'import/extensions': 'off',
-        indent: ['error', 4],
+        'indent': ['error', 4],
+        'lines-between-class-members': 'off',
         'max-len': ['error', 120],
+        'quotes': ['error', 'single'],
         'react/jsx-indent': ['error', 4],
         'react/jsx-filename-extension': 'off'
     },

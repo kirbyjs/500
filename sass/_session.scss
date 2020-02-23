@@ -1,0 +1,42 @@
+
+@import 'vars';
+
+#session {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+
+  .form-inputs {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 40px;
+    max-width: 350px;
+    width: 100%;
+
+    .MuiTextField-root {
+      .MuiInput-underline::before {
+        border-bottom: 1px solid $primary-white;
+      }
+
+      label,
+      input {
+        color: $primary-white;
+      }
+    }
+
+    > div:first-child {
+      margin: 0 0 20px;
+    }
+  }
+
+  #create-session-button {
+    font-family: 'Press Start 2P', sans-serif;
+    word-spacing: -7px;
+
+    .fa-gamepad {
+      margin: -3px 2px 0 0;
+    }
+  }
+}
