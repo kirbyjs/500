@@ -1,7 +1,7 @@
-import ActionTypes from '../enums/action-types';
+import { RequestActionTypes } from '../enums/action-types';
 
 interface WebSocketMessage {
-    action: ActionTypes;
+    action: RequestActionTypes;
     gameId: string;
 }
 

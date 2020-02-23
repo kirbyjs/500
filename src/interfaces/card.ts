@@ -5,11 +5,11 @@ export interface Card {
     suit?: CardSuits;
 }
 
-export interface StandardCard extends CardTypes {
+export interface StandardCard {
     type: CardTypes;
     suit: CardSuits;
 }
 
-export interface Joker extends CardTypes {
+export interface Joker {
     type: CardTypes.JOKER;
 }

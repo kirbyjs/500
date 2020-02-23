@@ -1,12 +1,17 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import App from '../../../src/ui/app';
+import App, { Props } from '../../../src/ui/app';
+import gameFactory from './factories/game';
 
 describe('<App /> rendering', () => {
-    let component: ShallowWrapper<React.FunctionComponent>;
+    let component: ShallowWrapper<typeof App>,
+        props: Props;
 
     beforeEach(() => {
-        component = shallow(<App />);
+        props = {
+            game: gameFactory.build()
+        };
+        component = shallow(<App { ...props }/>);
     });
 
     it('App renders', () => {

@@ -12,7 +12,7 @@ describe('Initializing the React App', () => {
         document.body.append(root);
 
         // when
-        initialize(FakeApp);
+        initialize(FakeApp as any);
 
         // then
         expect(root.children.item(0)?.nodeName).toEqual('DIV');
