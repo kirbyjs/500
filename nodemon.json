@@ -1,5 +1,0 @@
-{
-  "execMap": {
-    "ts": "babel-node --config-file ./babel/node.js --no-babelrc -x \".js\",\".ts\""
-  }
-}

@@ -23,9 +23,11 @@ RUN unzip $TF_FILE
 RUN terraform -v
 
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY nodemon.json ./
+COPY package.json ./
+COPY yarn.lock ./
+RUN yarn install
+
+COPY babel.config.js ./
 
 EXPOSE 7777
 

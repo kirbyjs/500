@@ -3,7 +3,7 @@ import WebSocket from 'ws';
 import { v4 } from 'uuid';
 import AWS from 'aws-sdk';
 import { InvocationResponse } from 'aws-sdk/clients/lambda';
-import WebSocketMessage from '../../src/interfaces/websocket-message';
+import WebSocketMessage from '../../packages/shared/interfaces/websocket-message';
 
 interface WebSocketExtension extends WebSocket {
     isAlive: boolean;
