@@ -13,6 +13,7 @@
   "license": "MIT",
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
+    "build:lambdas": "lerna run --scope *lambda build",
     "clean": "lerna clean -y",
     "coverage": "lerna run --stream coverage --concurrency 1",
     "eslint": "lerna run --parallel eslint",

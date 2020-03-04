@@ -10,7 +10,7 @@
   "author": "Kirby",
   "license": "MIT",
   "scripts": {
-    "babel": "cross-env NODE_ENV=production babel ./src -d lib  -x '.ts','.js'",
+    "babel": "cross-env NODE_ENV=production babel ./src -d lib  -x .ts,.js",
     "babel:shared": "cross-env NODE_ENV=production babel ../shared/ -d lib/shared  -x '.ts','.js' --ignore ../shared/factories",
     "build": "yarn run clean && run-s babel:shared babel",
     "clean": "rm -rf ./lib",
