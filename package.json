@@ -15,12 +15,13 @@
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build:lambdas": "lerna run --scope *lambda build",
     "clean": "lerna clean -y",
-    "coverage": "lerna run --stream coverage --concurrency 1",
-    "eslint": "lerna run --parallel eslint",
+    "coverage": "lerna run --stream coverage --concurrency 1 -- --color",
+    "eslint": "lerna run --parallel eslint -- --color",
     "lint": "run-p eslint stylelint",
     "start:apigateway-ws": "nodemon --exec 'babel-node -x .js,.ts' scripts/local/start-api-gateway-websocket.ts",
-    "stylelint": "lerna run --parallel stylelint",
-    "tsc": "lerna run --parallel tsc",
+    "start:client": "lerna run --stream --scope client start -- --color",
+    "stylelint": "lerna run --parallel stylelint -- --color",
+    "tsc": "lerna run --parallel tsc -- --pretty",
     "verify": "run-s lint tsc coverage"
   },
   "devDependencies": {
