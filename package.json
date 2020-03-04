@@ -58,7 +58,7 @@
     "@types/mini-css-extract-plugin": "^0.9.1",
     "@types/node": "^13.7.4",
     "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
-    "@types/react": "^16.9.22",
+    "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/terser-webpack-plugin": "^2.2.0",
     "@types/uuid": "^7.0.0",
