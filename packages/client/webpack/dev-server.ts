@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpackConfig from './common';
 
-const source: string = path.resolve(__dirname, '..', '..', 'src');
+const source: string = path.resolve(__dirname, '..', 'src');
 const plugins: webpack.Plugin[] = webpackConfig.plugins || [];
 
 const config: webpack.Configuration = {
