@@ -11,6 +11,7 @@ jobs:
           node-version: 12.x
       - name: npm_verify
         run: |
+          yarn install
           yarn run bootstrap
           yarn run verify
         env:
