@@ -12,7 +12,7 @@
   "scripts": {
     "build": "yarn run clean && cross-env NODE_ENV=production yarn run webpack:prod",
     "clean": "rm -rf ./assets/bundle",
-    "coverage": "yarn run test -- --collect-coverage",
+    "coverage": "yarn run test --collect-coverage",
     "eslint": "eslint . --ext .js,.ts,.tsx",
     "start": "yarn run webpack:dev",
     "test": "cross-env NODE_ENV=test jest",
