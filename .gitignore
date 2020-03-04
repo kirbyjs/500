@@ -2,9 +2,8 @@
 .DS_Store
 .terraform
 *.tfstate
-/assets/bundle
-/assets/json
-/coverage
-/lib
-/node_modules
-/webpack/manifest
+lib
+assets/bundle
+tf/**/crash.log
+coverage
+node_modules

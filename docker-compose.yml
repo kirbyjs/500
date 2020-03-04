@@ -29,8 +29,7 @@ services:
     volumes:
       - ./scripts/local/:/app/scripts/local
       - ./tf/local/:/app/tf/local
-      - ./src/lambdas:/app/src/lambdas
-      - ./babel:/app/babel
+      - ./packages:/app/packages
     depends_on:
       - localstack
     networks:

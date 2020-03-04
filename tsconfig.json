@@ -7,6 +7,7 @@
     "allowJs": true,
     "noEmit": true,
     "jsx": "react",
+    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "isolatedModules": true,
@@ -14,14 +15,13 @@
     "baseUrl": ".",
     "paths": {
       "src*": [
-        "./src*"
+        "./packages/client/src*",
+        "./packages/actions-lambda/src*",
+        "./packages/websocket-disconnection-lambda/src*"
       ]
     }
   },
   "include": [
-    "scripts/local/*.ts",
-    "src/**/*",
-    "test/**/*",
-    "webpack/**/*"
+    "packages/**/*.ts"
   ]
 }

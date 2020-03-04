@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "actions-lambda",
+  "version": "1.0.0",
+  "description": "500 card game - lambdas",
+  "repository": {
+    "url": "https://github.com/kirbyjs/500"
+  },
+  "main": "index.ts",
+  "author": "Kirby",
+  "license": "MIT",
+  "scripts": {
+    "babel": "cross-env NODE_ENV=production babel ./src -d lib  -x '.ts','.js'",
+    "babel:shared": "cross-env NODE_ENV=production babel ../shared/ -d lib/shared  -x '.ts','.js' --ignore ../shared/factories",
+    "build": "yarn run clean && run-s babel:shared babel",
+    "clean": "rm -rf ./lib",
+    "coverage": "yarn run test -- --collect-coverage",
+    "eslint": "eslint . --ext .js,.ts --ignore-pattern lib",
+    "test": "cross-env NODE_ENV=test jest",
+    "tsc": "tsc",
+    "verify": "run-p eslint coverage tsc"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.624.0",
+    "config": "^3.2.6",
+    "shared": "./packages/shared"
+  }
+}

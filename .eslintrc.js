@@ -12,7 +12,6 @@ module.exports = {
         react: { version: 'detect' },
         'import/resolver': {
             node: {
-                paths: ["."],
                 extensions: ['.js', '.jsx', '.ts', '.tsx']
             }
         }
@@ -33,6 +32,13 @@ module.exports = {
         'react/jsx-indent': ['error', 4],
         'react/jsx-filename-extension': 'off'
     },
+    overrides: [{
+        files: ['**/*.ts'],
+        parser: '@typescript-eslint/parser',
+        rules: {
+            'no-undef': 'off'
+        }
+    }],
     plugins: [
         'import',
         'jest',
