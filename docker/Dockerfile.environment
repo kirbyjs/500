@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM hashicorp/terraform
 
 ENV AWS_ACCESS_KEY_ID=fake
 ENV AWS_SECRET_ACCESS_KEY=fake
@@ -13,22 +13,5 @@ RUN apk --purge -v del py-pip
 RUN rm /var/cache/apk/*
 
 WORKDIR /app
-ENV PATH="/app/terraform:$PATH"
-ENV TF_VERSION=0.12.20
-ENV TF_FILE="terraform_${TF_VERSION}_linux_amd64.zip"
 
-WORKDIR /app/terraform
-RUN wget https://releases.hashicorp.com/terraform/${TF_VERSION}/${TF_FILE}
-RUN unzip $TF_FILE
-RUN terraform -v
-
-WORKDIR /app
-COPY package.json ./
-COPY yarn.lock ./
-RUN yarn install
-
-COPY babel.config.js ./
-
-EXPOSE 7777
-
-CMD ["sh", "./scripts/local/build-env.sh"]
+ENTRYPOINT ["sh", "./scripts/local/build-env.sh"]

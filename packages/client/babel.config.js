@@ -1,5 +1,5 @@
 module.exports = {
-    ignore: ['node_modules'],
+    ...require('../../babel.config'), // eslint-disable-line global-require
     presets: [
         '@babel/preset-typescript',
         '@babel/preset-react',

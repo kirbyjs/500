@@ -9,6 +9,7 @@
 
 1. `$ docker-compose up`
     - This will spin up the local aws environment so that we can get a production like environment locally.
+1. `$ yarn run build:lambdas`
 1. `$ yarn run start`
     - This will start the webpack-dev-server and will hot-reload the application
 

@@ -24,14 +24,24 @@ services:
     build:
       dockerfile: ./docker/Dockerfile.environment
       context: .
-    ports:
-      - 7777:7777
     volumes:
       - ./scripts/local/:/app/scripts/local
       - ./tf/local/:/app/tf/local
-      - ./packages:/app/packages
     depends_on:
       - localstack
+    networks:
+      - app
+  apigateway_websocket:
+    image: apigateway_websocket
+    container_name: apigateway_websocket
+    build:
+      context: ./packages/local-api-gateway-websocket
+    ports:
+      - 7676:7676
+    volumes:
+      - ./packages/local-api-gateway-websocket/src:/app/src
+    depends_on:
+      - environment
     networks:
       - app
 
