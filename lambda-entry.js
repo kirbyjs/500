@@ -3,9 +3,6 @@
 const { actions } = require('./packages/actions-lambda');
 const { websocketDisconnection } = require('./packages/websocket-disconnection-lambda');
 
-console.log('here');
-console.log(websocketDisconnection);
-
 module.exports = {
     actions,
     websocketDisconnection

@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "local-api-gateway-websocket",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "eslint": "eslint . --ext .js,.ts --ignore-pattern lib",
+    "start": "nodemon --exec 'babel-node -x .ts' src/start.ts",
+    "tsc": "tsc",
+    "verify": "run-p eslint tsc"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.633.0",
+    "ws": "^7.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
+    "nodemon": "^2.0.2"
+  }
+}

@@ -2,7 +2,7 @@
 .gitignore
 LICENSE
 README.md
-/assets/bundle
-/assets/json
-/lib
-/node_modules
+assets/bundle
+assets/json
+lib
+node_modules
