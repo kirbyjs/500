@@ -1,10 +1,12 @@
+import AWS from 'aws-sdk';
+
 function waitFiveSeconds() {
     return new Promise((resolve) => {
         setTimeout(() => resolve(), 5000);
     });
 }
 
-async function checkIfLambdasExist(lambdaClient: any, lambda: string): Promise<undefined> {
+async function checkIfLambdasExist(lambdaClient: AWS.Lambda, lambda: string): Promise<undefined> {
     try {
         await lambdaClient.getFunction({ FunctionName: lambda }).promise();
         return Promise.resolve(undefined);
@@ -15,7 +17,7 @@ async function checkIfLambdasExist(lambdaClient: any, lambda: string): Promise<u
     }
 }
 
-export default function waitForLambdas(lambdaClient: any, lambdaFunctionNames: string[]) {
+export default function waitForLambdas(lambdaClient: AWS.Lambda, lambdaFunctionNames: string[]) {
     const promises = lambdaFunctionNames.map((lambda) => checkIfLambdasExist(lambdaClient, lambda));
 
     return new Promise((resolve) => Promise.all(promises).then(() => resolve()));

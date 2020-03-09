@@ -73,7 +73,7 @@ const config: webpack.Configuration = {
             },
             {
                 test: /\.(ts|js)x?$/,
-                exclude: /node_modules/,
+                exclude: /node_modules\/(?!shared)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
