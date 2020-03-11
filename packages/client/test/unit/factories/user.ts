@@ -1,5 +1,5 @@
 import { Sync } from 'factory.ts';
-import User from 'src/mobx/user';
+import User from 'src/stores/user';
 
 const noop = () => undefined;
 

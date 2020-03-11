@@ -11,9 +11,7 @@ jest.mock('src/helpers/response-builder');
 describe('Feature: Actions Lambda', () => {
     const buildSuccessResult = Symbol('buildSuccessResult');
     const buildErrorResult = Symbol('buildErrorResult');
-    let websocketMessage: WebSocketMessage,
-        event: ApiGatewayEvent,
-        context: ApiContext;
+    let websocketMessage: WebSocketMessage, event: ApiGatewayEvent, context: ApiContext;
 
     beforeEach(() => {
         websocketMessage = apigatewayWebsocketFactories.websocketMessage.build();
@@ -39,8 +37,7 @@ describe('Feature: Actions Lambda', () => {
         expect(responseBuilder.buildSuccessResponse).toHaveReturnedWith(buildSuccessResult);
     });
 
-
-    it.each(['', null])('should error response for %s', (falsyValue) => {
+    it.each(['', null])('should error response for %s', falsyValue => {
         event = lambdaFactories.lambdaEvent.build({
             body: falsyValue
         });

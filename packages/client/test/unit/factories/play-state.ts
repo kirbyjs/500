@@ -1,5 +1,5 @@
 import { Sync } from 'factory.ts';
-import PlayState from 'src/mobx/play-state';
+import PlayState from 'src/stores/play-state';
 
 const playStateFactory = Sync.makeFactory<PlayState>({
     allCardsPlayed: [],

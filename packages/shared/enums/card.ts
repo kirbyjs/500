@@ -1,4 +1,3 @@
-
 export enum CardTypes {
     JOKER = 'JOKER',
     ACE = 'ACE',
