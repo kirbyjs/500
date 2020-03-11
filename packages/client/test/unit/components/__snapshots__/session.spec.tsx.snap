@@ -1,25 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Session /> rendering Session renders 1`] = `
+exports[`<Session /> should render Session 1`] = `
 <form
   id="session"
 >
-  <div
-    className="form-inputs"
-  >
-    <WithStyles(ForwardRef(TextField))
-      id="username"
-      label="Name"
-      onChange={[Function]}
-      value="Balzee"
-    />
-    <WithStyles(ForwardRef(TextField))
-      id="gameId"
-      label="Game Id"
-      onChange={[Function]}
-      value="game-id"
-    />
-  </div>
+  <Observer>
+    <Component />
+  </Observer>
   <WithStyles(ForwardRef(Button))
     color="primary"
     id="create-session-button"
@@ -63,4 +50,32 @@ exports[`<Session /> rendering Session renders 1`] = `
     Press Start
   </WithStyles(ForwardRef(Button))>
 </form>
+`;
+
+exports[`<Session /> should render form elements 1`] = `
+<Fragment>
+  <WithStyles(ForwardRef(Tabs))
+    indicatorColor="primary"
+    onChange={[Function]}
+    textColor="primary"
+    value={0}
+  >
+    <WithStyles(ForwardRef(Tab))
+      label="Create"
+    />
+    <WithStyles(ForwardRef(Tab))
+      label="Join"
+    />
+  </WithStyles(ForwardRef(Tabs))>
+  <div
+    className="form-inputs"
+  >
+    <WithStyles(ForwardRef(TextField))
+      id="username"
+      label="Name"
+      onChange={[Function]}
+      value="Balzee"
+    />
+  </div>
+</Fragment>
 `;

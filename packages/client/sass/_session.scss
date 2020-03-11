@@ -1,4 +1,3 @@
-
 @import 'vars';
 
 #session {
@@ -6,12 +5,28 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
+  position: relative;
+  top: calc(50% - 130px);
+
+  .MuiTabs-root {
+    margin-bottom: 25px;
+
+    .MuiTab-root {
+      &,
+      .MuiTabs-indicator {
+        min-width: 140px;
+      }
+
+      .MuiTab-wrapper {
+        color: $primary-white;
+      }
+    }
+  }
 
   .form-inputs {
     display: flex;
     flex-direction: column;
-    margin: 0 0 40px;
+    margin: 0 0 48px;
     max-width: 350px;
     width: 100%;
 
@@ -37,6 +52,17 @@
 
     .fa-gamepad {
       margin: -3px 2px 0 0;
+    }
+  }
+}
+
+@media (min-width: $medium-screen-size) {
+  #session {
+    .MuiTabs-root {
+      & .MuiTab-root,
+      & .MuiTabs-indicator {
+        min-width: 180px;
+      }
     }
   }
 }
