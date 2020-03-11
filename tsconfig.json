@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "module": "ESNext",
     "target": "ESNext",
     "moduleResolution": "node",
     "allowJs": true,
@@ -11,17 +12,6 @@
     "sourceMap": true,
     "strict": true,
     "isolatedModules": true,
-    "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths": {
-      "src*": [
-        "./packages/client/src*",
-        "./packages/actions-lambda/src*",
-        "./packages/websocket-disconnection-lambda/src*"
-      ]
-    }
-  },
-  "include": [
-    "packages/**/*.ts"
-  ]
+    "esModuleInterop": true
+  }
 }
