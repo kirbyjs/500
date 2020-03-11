@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import autoprefixer from 'autoprefixer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import config from 'config';
 import { GenerateSW, GenerateSWOptions } from 'workbox-webpack-plugin';
 
 interface GenerateSWOptionsV5 extends GenerateSWOptions {
@@ -56,7 +57,7 @@ const swOptions: GenerateSWOptionsV5 = {
     ]
 };
 
-const config: webpack.Configuration = {
+const webpackConfig: webpack.Configuration = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.json']
     },
@@ -64,12 +65,14 @@ const config: webpack.Configuration = {
         rules: [
             {
                 test: /\.(jpg|jp2|webp|pdf|png|svg)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[contenthash].[ext]'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[contenthash].[ext]'
+                        }
                     }
-                }]
+                ]
             },
             {
                 test: /\.(ts|js)x?$/,
@@ -88,11 +91,14 @@ const config: webpack.Configuration = {
         ]
     },
     plugins: [
+        new webpack.DefinePlugin({ CONFIG: JSON.stringify(config) }),
         new GenerateSW(swOptions),
-        new CopyPlugin([{
-            from: path.resolve(__dirname, '..', 'public')
-        }])
+        new CopyPlugin([
+            {
+                from: path.resolve(__dirname, '..', 'public')
+            }
+        ])
     ]
 };
 
-export default config;
+export default webpackConfig;

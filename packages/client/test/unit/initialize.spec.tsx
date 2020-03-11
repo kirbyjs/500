@@ -1,5 +1,6 @@
 import React from 'react';
 import initialize from 'src/initialize';
+import ReactApp from 'src/app';
 
 function FakeApp() {
     return <div />;
@@ -12,7 +13,7 @@ describe('Initializing the React App', () => {
         document.body.append(root);
 
         // when
-        initialize(FakeApp as any);
+        initialize(FakeApp as typeof ReactApp);
 
         // then
         expect(root.children.item(0)?.nodeName).toEqual('DIV');

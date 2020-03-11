@@ -1,11 +1,10 @@
 import React from 'react';
 import { random } from 'faker';
-import Game from 'src/mobx/game';
+import Game from 'src/stores/game';
 import { reactInputChangeEvent } from '../factories/react-events';
 
 describe('Game Mobx State', () => {
-    let game: Game,
-        event: React.ChangeEvent<HTMLInputElement>;
+    let game: Game, event: React.ChangeEvent<HTMLInputElement>;
 
     beforeEach(() => {
         game = new Game();
@@ -22,5 +21,13 @@ describe('Game Mobx State', () => {
 
         // then
         expect(game.id).toBe(expectedGameId);
+    });
+
+    it('should default game id to empty string', () => {
+        // when
+        game.setGameId(reactInputChangeEvent.build({ currentTarget: { value: undefined } }));
+
+        // then
+        expect(game.id).toBe('');
     });
 });

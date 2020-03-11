@@ -1,4 +1,3 @@
-
 jest.mock('src/initialize');
 import initialize from 'src/initialize';
 import App from 'src/app';

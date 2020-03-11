@@ -1,5 +1,5 @@
 import { Sync } from 'factory.ts';
-import Game from 'src/mobx/game';
+import Game from 'src/stores/game';
 import PhaseTypes from 'shared/enums/phase-types';
 import userFactory from './user';
 import playStateFactory from './play-state';

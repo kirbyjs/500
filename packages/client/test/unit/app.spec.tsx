@@ -1,20 +1,15 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import App, { Props } from 'src/app';
-import gameFactory from './factories/game';
+import App from 'src/app';
 
-describe('<App /> rendering', () => {
-    let component: ShallowWrapper<typeof App>,
-        props: Props;
+describe('<App />', () => {
+    let component: ShallowWrapper<typeof App>;
 
     beforeEach(() => {
-        props = {
-            game: gameFactory.build()
-        };
-        component = shallow(<App { ...props }/>);
+        component = shallow(<App />);
     });
 
-    it('App renders', () => {
+    it('should render component', () => {
         expect(component).toMatchSnapshot();
     });
 });
