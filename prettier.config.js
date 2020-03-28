@@ -3,7 +3,7 @@ module.exports = {
     printWidth: 120,
     singleQuote: true,
     tabWidth: 4,
-    trailingComma: false,
+    trailingComma: 'none',
     overrides: [
         {
             files: '*.json',

@@ -37,7 +37,7 @@ describe('Feature: Actions Lambda', () => {
         expect(responseBuilder.buildSuccessResponse).toHaveReturnedWith(buildSuccessResult);
     });
 
-    it.each(['', null])('should error response for %s', falsyValue => {
+    it.each(['', null])('should error response for %s', (falsyValue) => {
         event = lambdaFactories.lambdaEvent.build({
             body: falsyValue
         });
