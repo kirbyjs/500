@@ -23,6 +23,6 @@
   "dependencies": {
     "aws-sdk": "^2.624.0",
     "config": "^3.2.6",
-    "shared": "./packages/shared"
+    "shared": "1.0.0"
   }
 }
