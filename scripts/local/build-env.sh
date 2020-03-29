@@ -15,5 +15,13 @@ terraform apply -auto-approve -lock=false
 aws --endpoint-url=http://localstack:4574 lambda create-function --function-name websocketDisconnection \
     --code S3Bucket="__local__",S3Key="\$PWD_USER" \
     --handler lambda-entry.websocketDisconnection \
+    --timeout 10 \
+    --runtime nodejs12.x \
+    --role lambda_role
+
+aws --endpoint-url=http://localstack:4574 lambda create-function --function-name websocketConnection \
+    --code S3Bucket="__local__",S3Key="\$PWD_USER" \
+    --handler lambda-entry.websocketConnection \
+    --timeout 10 \
     --runtime nodejs12.x \
     --role lambda_role

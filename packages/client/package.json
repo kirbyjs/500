@@ -13,13 +13,13 @@
     "build": "yarn run clean && cross-env NODE_ENV=production yarn run webpack:prod",
     "clean": "rm -rf ./assets/bundle",
     "coverage": "yarn run test --collect-coverage",
-    "eslint": "eslint . --ext .js,.ts,.tsx",
+    "eslint": "eslint . --ext .js,.ts,.tsx --color",
     "start": "yarn run webpack:dev",
-    "test": "cross-env NODE_ENV=test jest",
-    "tsc": "tsc",
-    "stylelint": "stylelint ./sass",
-    "webpack:dev": "webpack-dev-server --config webpack/dev-server.ts --hot",
-    "webpack:prod": "webpack --config webpack/app.ts"
+    "test": "cross-env NODE_ENV=test jest --color",
+    "tsc": "tsc --pretty",
+    "stylelint": "stylelint ./sass --color",
+    "webpack:dev": "webpack-dev-server --config webpack/dev-server.ts --hot --color",
+    "webpack:prod": "webpack --config webpack/app.ts --color"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",

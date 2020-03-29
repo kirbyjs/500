@@ -10,11 +10,10 @@
   "author": "Kirby",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run clean && cross-env NODE_ENV=production babel ./src -d lib  -x .ts,.js",
-    "clean": "rm -rf ./lib",
-    "eslint": "eslint . --ext .js,.ts --ignore-pattern lib",
-    "test": "cross-env NODE_ENV=test jest",
-    "tsc": "tsc",
+    "build": "rm -rf ./lib cross-env NODE_ENV=production babel ./src -d lib  -x .ts,.js",
+    "eslint": "eslint . --ext .js,.ts --ignore-pattern lib --color",
+    "test": "cross-env NODE_ENV=test jest --color",
+    "tsc": "tsc --pretty",
     "verify": "run-p eslint tsc"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 import { CardSuits, CardTypes } from '../enums/card';
 
 export interface Card {
-    type: Card;
+    type: CardTypes;
     suit?: CardSuits;
 }
 

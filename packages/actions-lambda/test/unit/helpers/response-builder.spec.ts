@@ -1,6 +1,6 @@
 import { random } from 'faker';
 import { buildErrorResponse, buildSuccessResponse } from 'src/helpers/response-builder';
-import * as apigatewayWebsocket from 'shared/factories/apigateway-websocket';
+import * as apigatewayWebsocket from 'shared/test/factories/apigateway-websocket';
 
 describe('Feature: Building out Lambda Responses', () => {
     it('should build default success response', () => {

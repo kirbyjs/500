@@ -9,13 +9,8 @@
 
 1. `$ docker-compose up`
     - This will spin up the local aws environment so that we can get a production like environment locally.
-1. `$ yarn run build:lambdas`
 1. `$ yarn run start`
     - This will start the webpack-dev-server and will hot-reload the application
-
-#### Updating the lambdas
-1. After a change is made run: `$ yarn run build:lambdas`
-    - The lambdas are bind mounted to the host machine, so there is no need to restart any services.
 
 #### Note on lambda logging
 :notebook: There is no output logs for the lambda right out of the box. To enable this run: 

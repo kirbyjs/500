@@ -1,11 +1,13 @@
 /* eslint-disable no-param-reassign */
+import * as http from 'http';
 import WebSocket from 'ws';
 import { v4 } from 'uuid';
 import AWS from 'aws-sdk';
+import qs, { ParsedUrl } from 'query-string';
 import { InvocationResponse } from 'aws-sdk/clients/lambda';
 import waitForLambdas from './wait-for-lambdas';
 
-const onMessageLambdaName = process.env.ON_MESSAGE_LAMBDA_NAME || 'actions';
+const onOpenLambdaName = process.env.ON_OPEN_LAMBDA_NAME || 'websocketConnection';
 const onCloseLambdaName = process.env.ON_CLOSE_LAMBDA_NAME || 'websocketDisconnection';
 
 interface WebSocketExtension extends WebSocket {
@@ -38,28 +40,30 @@ async function invokeLambda(name: string, payload: string): Promise<InvocationRe
     });
 }
 
-function getPayload(connectionId: string, body?: object): string {
+function getPayload(connectionId: string, parsedUrl?: ParsedUrl): string {
     return JSON.stringify({
         headers: { connectionId },
-        body: JSON.stringify(body)
+        queryStringParameters: parsedUrl?.query
     });
 }
 
 async function buildConnection() {
-    await waitForLambdas(lambda, [onMessageLambdaName, onCloseLambdaName]);
+    await waitForLambdas(lambda, [onOpenLambdaName, onCloseLambdaName]);
 
-    console.log('starting websocket');
-    wss.on('connection', (ws: WebSocketExtension) => {
+    console.log('starting websocket...');
+    wss.on('connection', async (ws: WebSocketExtension, request: http.IncomingMessage) => {
+        if (!request.url) {
+            throw new Error('url is required');
+        }
+
         ws.isAlive = true;
         ws.connectionId = v4();
 
         ws.on('pong', heartbeat);
-        ws.on('message', async (message: string) => {
-            await invokeLambda(onMessageLambdaName, getPayload(ws.connectionId, JSON.parse(message)));
-        });
         ws.on('close', async () => {
             await invokeLambda(onCloseLambdaName, getPayload(ws.connectionId));
         });
+        await invokeLambda(onOpenLambdaName, getPayload(ws.connectionId, qs.parseUrl(request.url)));
     });
 
     setInterval(() => {

@@ -5,7 +5,7 @@ resource "aws_lambda_function" "actions" {
   handler       = "lambda-entry.actions"
   role          = aws_iam_role.lambda_role.arn
   runtime       = "nodejs12.x"
-  timeout       = 60
+  timeout       = 10
 }
 
 resource "aws_iam_role" "lambda_role" {

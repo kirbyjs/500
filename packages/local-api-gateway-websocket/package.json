@@ -5,13 +5,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "eslint": "eslint . --ext .js,.ts --ignore-pattern lib",
-    "start": "nodemon --exec 'babel-node -x .ts' src/start.ts",
-    "tsc": "tsc",
+    "eslint": "eslint . --ext .js,.ts --ignore-pattern lib --color",
+    "start": "nodemon --exec 'babel-node -x .ts' src/start.ts --color",
+    "tsc": "tsc --pretty",
     "verify": "run-p eslint tsc"
   },
   "dependencies": {
     "aws-sdk": "^2.633.0",
+    "query-string": "^6.11.1",
     "ws": "^7.2.1"
   },
   "devDependencies": {
