@@ -7,20 +7,20 @@ module.exports = {
         'plugin:jsx-a11y/recommended',
         'plugin:import/errors',
         'plugin:@typescript-eslint/recommended',
-        'plugin:prettier/recommended',
+        'plugin:prettier/recommended'
     ],
     settings: {
         react: { version: 'detect' },
         'import/resolver': {
             node: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx'],
-            },
-        },
+                extensions: ['.js', '.jsx', '.ts', '.tsx']
+            }
+        }
     },
     env: {
         node: true,
         browser: true,
-        'jest/globals': true,
+        'jest/globals': true
     },
     rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
@@ -33,16 +33,16 @@ module.exports = {
         'max-len': ['error', 120],
         quotes: ['error', 'single'],
         'react/jsx-indent': ['error', 4],
-        'react/jsx-filename-extension': 'off',
+        'react/jsx-filename-extension': 'off'
     },
     overrides: [
         {
             files: ['**/*.ts'],
             parser: '@typescript-eslint/parser',
             rules: {
-                'no-undef': 'off',
-            },
-        },
+                'no-undef': 'off'
+            }
+        }
     ],
-    plugins: ['import', 'prettier', 'jest', 'jsx-a11y', 'react', 'react-hooks'],
-}
+    plugins: ['import', 'prettier', 'jest', 'jsx-a11y', 'react', 'react-hooks']
+};

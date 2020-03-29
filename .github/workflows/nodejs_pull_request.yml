@@ -12,7 +12,6 @@ jobs:
       - name: npm_verify
         run: |
           yarn install
-          yarn run bootstrap
-          yarn run verify
+          yarn verify
         env:
           CI: true

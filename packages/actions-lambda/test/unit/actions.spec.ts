@@ -2,7 +2,7 @@ import * as responseBuilder from 'src/helpers/response-builder';
 import WebSocketMessage from 'shared/interfaces/websocket-message';
 import { ApiContext, ApiGatewayEvent } from 'shared/interfaces/aws-lambda';
 import ActionLambdaErrorTypes from 'shared/enums/error-types';
-import * as apigatewayWebsocketFactories from 'shared/factories/apigateway-websocket';
+import * as apigatewayWebsocketFactories from 'shared/test/factories/apigateway-websocket';
 import actions from 'src/actions';
 import * as lambdaFactories from './factories/lambda';
 

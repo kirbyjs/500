@@ -11,13 +11,11 @@
   "license": "MIT",
   "scripts": {
     "babel": "cross-env NODE_ENV=production babel ./src -d lib  -x .ts,.js",
-    "babel:shared": "cross-env NODE_ENV=production babel ../shared/ -d lib/shared  -x '.ts','.js' --ignore ../shared/factories",
-    "build": "yarn run clean && run-s babel:shared babel",
-    "clean": "rm -rf ./lib",
-    "coverage": "yarn run test --collect-coverage",
-    "eslint": "eslint . --ext .js,.ts --ignore-pattern lib",
-    "test": "cross-env NODE_ENV=test jest",
-    "tsc": "tsc",
+    "build": "rm -rf ./lib && yarn babel",
+    "coverage": "yarn test --collect-coverage",
+    "eslint": "eslint . --ext .js,.ts --ignore-pattern lib --color",
+    "test": "cross-env NODE_ENV=test jest --color",
+    "tsc": "tsc --pretty",
     "verify": "run-p eslint coverage tsc"
   },
   "dependencies": {

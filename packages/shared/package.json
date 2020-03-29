@@ -3,7 +3,7 @@
   "name": "shared",
   "version": "1.0.0",
   "scripts": {
-    "eslint": "eslint . --ext .js,.ts",
-    "tsc": "tsc"
+    "eslint": "eslint . --ext .js,.ts --color",
+    "tsc": "tsc --pretty"
   }
 }
