@@ -2809,9 +2809,9 @@
     source-map "^0.6.0"
 
 "@types/workbox-webpack-plugin@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@types/workbox-webpack-plugin/-/workbox-webpack-plugin-5.0.0.tgz#5ed921dfa1238893d8e1e6df5e972a036fa98baf"
-  integrity sha512-Ov3e317b+1q5vrHPJAzPFrvDHb9COlkisNU7FJH4r7MWhwxN+xnkJZhtpYxFVexe9RRoJVpz/2WONhXnVPf+NA==
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/@types/workbox-webpack-plugin/-/workbox-webpack-plugin-5.1.4.tgz#446530962fb0e7f045be8280a564702a8a534e80"
+  integrity sha512-MXUrweAEJDy7F0moFJ9T5KEoDEu4wU8U2BhtnwXiY8lfY7Ht+A8PkdD1qKWmSoL2aWZJwQv+N6ZCGHlKSFZx7g==
 
 "@types/ws@^7.2.1":
   version "7.2.7"
