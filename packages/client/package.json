@@ -39,7 +39,7 @@
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "@hot-loader/react-dom": "^17.0.0",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^10.2.4",
     "babel-loader": "^8.0.5",
     "babel-plugin-css-modules-transform": "^1.6.2",
     "copy-webpack-plugin": "^7.0.0",
