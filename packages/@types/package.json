@@ -12,7 +12,7 @@
     "@types/autoprefixer": "^10.2.0",
     "@types/aws-lambda": "^8.10.44",
     "@types/config": "^0.0.38",
-    "@types/copy-webpack-plugin": "^5.0.0",
+    "@types/copy-webpack-plugin": "^8.0.0",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/faker": "^5.1.0",
