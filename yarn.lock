@@ -6711,12 +6711,12 @@ extsprintf@^1.2.0:
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
 
 factory.ts@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/factory.ts/-/factory.ts-0.5.1.tgz#4bab72d8457078906aa6ab396c0d341e8a3ab382"
-  integrity sha512-jwAq8w7MmxUojIFzKezMwTzDc5QoxcqzAA8+n9A0EAWBje2CRHUeBrW9x/ioV2DRjHgkHX7i0G0ipfDhlatIQw==
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/factory.ts/-/factory.ts-0.5.2.tgz#1ab69b9ec75efc9d72977557794fe8e0cc7f846d"
+  integrity sha512-I4YDKuyMW+s2PocnWh/Ekv9wSStt/MNN1ZRb1qhy0Kv056ndlzbLHDsW9KEmTAqMpLI3BtjSqEdZ7ZfdnaXn9w==
   dependencies:
     clone-deep "^4.0.1"
-    source-map-support "^0.5.9"
+    source-map-support "^0.5.19"
 
 faker@^5.0.0:
   version "5.5.3"
@@ -13249,7 +13249,7 @@ source-map-resolve@^0.5.0:
     source-map-url "^0.4.0"
     urix "^0.1.0"
 
-source-map-support@^0.5.16, source-map-support@^0.5.17, source-map-support@^0.5.6, source-map-support@^0.5.9, source-map-support@~0.5.12, source-map-support@~0.5.19:
+source-map-support@^0.5.16, source-map-support@^0.5.17, source-map-support@^0.5.19, source-map-support@^0.5.6, source-map-support@~0.5.12, source-map-support@~0.5.19:
   version "0.5.19"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
   integrity sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==
