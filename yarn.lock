@@ -3814,9 +3814,9 @@ autoprefixer@^9.8.6:
     postcss-value-parser "^4.1.0"
 
 aws-sdk@^2.624.0, aws-sdk@^2.633.0:
-  version "2.904.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.904.0.tgz#45a53e918698e451f762e44005dfce177a50b7e6"
-  integrity sha512-BnlMgxiQ0as0LSigm/QVgdh8CoIVY29DItmnFOnL6ahJ5W/m1Xzpge2jJoj+gqwZ+QQvOO31dDYw9PtteiR/IQ==
+  version "2.920.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.920.0.tgz#27559885ca882de1f87dd21ae4d2d004690867a7"
+  integrity sha512-tbMZ/Y2rRo6R6TTBODJXTiil+MXaoT6Qzotws3yvI1IWGpYxKo7N/3L06XB8ul8tCG0TigxIOY70SMICM70Ppg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
